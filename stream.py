@@ -42,14 +42,6 @@ if uploaded_file is not None:
     df3 = df2.drop(index=outliers, errors='ignore')
 
     st.write("### Data after removing outliers", df3)
-
-    # Hierarchical Clustering
-    # fig2, ax2 = plt.subplots(figsize=(16, 8))
-    # dendrogram(linkage(df3, method="ward"), ax=ax2)
-    # ax2.set_title('Hierarchical Clustering Dendrogram')
-    # ax2.set_xlabel('Index')
-    # ax2.set_ylabel('Euclidean distance')
-    # st.pyplot(fig2)
     
     # Number of clusters input
     n_clusters = st.number_input(
@@ -94,15 +86,6 @@ if uploaded_file is not None:
     ax2.legend()
 
     st.pyplot(fig2)
-
-    st.write("### Cluster assignment", df3)
-
-
-    # Number of clusters input
-    # n_clusters = st.number_input("Select number of clusters", min_value=2, max_value=10, value=2, step=1)
-    # hc = AgglomerativeClustering(n_clusters=n_clusters, metric='euclidean', linkage='ward')
-    # labels = hc.fit_predict(df3)
-    # df3['cluster'] = labels
 
     st.write("### Cluster assignment", df3)
 
